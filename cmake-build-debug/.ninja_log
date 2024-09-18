@@ -1,5 +1,0 @@
-# ninja log v6
-0	18	1726564961667697569	build.ninja	b0d4145aceee2f07
-1	402	1726505880028495551	CMakeFiles/TicTacToe.dir/board.cpp.o	76e887266f34df0f
-1	417	1726505880028495551	CMakeFiles/TicTacToe.dir/main.cpp.o	f7af2bb717d516ba
-417	471	1726505880444502572	TicTacToe	d4dc767b5fdf1292

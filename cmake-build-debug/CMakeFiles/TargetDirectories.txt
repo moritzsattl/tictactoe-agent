@@ -1,3 +1,0 @@
-/home/moritz/CLionProjects/TicTacToe/cmake-build-debug/CMakeFiles/TicTacToe.dir
-/home/moritz/CLionProjects/TicTacToe/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/moritz/CLionProjects/TicTacToe/cmake-build-debug/CMakeFiles/rebuild_cache.dir
