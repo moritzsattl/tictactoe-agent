@@ -37,6 +37,12 @@ class Board
         [[nodiscard]] bool isMovePossible(int row, int col) const;
 
         /**
+         * Get possible moves
+         * @return an boolean array contains 1s at board positions where moves are possible else 0
+         */
+        [[nodiscard]] std::array<bool, 9> getPossibleMoves() const;
+
+        /**
          *
          * @return 0 iff player 0 wins, 1 iff player 1 wins, -1 iff draw
          */

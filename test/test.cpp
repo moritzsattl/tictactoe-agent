@@ -2,7 +2,10 @@
 #include <catch2/catch_test_macros.hpp>
 #include <memory>
 
-TEST_CASE("Board - Determine Winner", "[board]") {
+#include "Agent.h"
+
+TEST_CASE("Board - Determine Winner", "[board]")
+{
     SECTION("Horizontal win conditions") {
         // Top row horizontal win
         auto board1 = std::make_unique<Board>(std::make_pair(0, 2), std::array<char, 9>{'X', 'X', 'X', '-', '-', '-', '-', '-', '-'});
@@ -67,5 +70,23 @@ TEST_CASE("Board - Determine Winner", "[board]") {
         // No moves have been made
         auto board = std::make_unique<Board>();
         REQUIRE(board->determineWinner() == -1);
+    }
+}
+
+
+TEST_CASE("Agent - Get next move", "[Agent]")
+{
+
+    SECTION("Agent - Simple win condition")
+    {
+        const auto agent1 = std::make_unique<Agent>(1);
+        const auto board1 = std::make_unique<Board>(std::make_pair(2, 0),std::array<char, 9>{'O', 'O', '-', 'X', 'X','O', 'X', 'X', '-'});
+        REQUIRE(agent1->getNextMove(board1) == 2);
+    }
+    SECTION("Agent - Defend enemy win condition")
+    {
+        const auto agent2 = std::make_unique<Agent>(0);
+        const auto board2 = std::make_unique<Board>(std::make_pair(2, 0),std::array<char, 9>{'O', 'O', '-', 'X', 'X','O', 'O', 'X', '-'});
+        REQUIRE(agent2->getNextMove(board2) == 2);
     }
 }

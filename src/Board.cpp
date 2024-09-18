@@ -35,7 +35,16 @@ bool Board::isMovePossible(const int row, const int col) const
     if(this->state[(row * 3) + col] != '-') return false;
 
     return true;
+}
 
+std::array<bool, 9> Board::getPossibleMoves() const
+{
+    std::array<bool, 9> possibleMoves = {};
+    for(int i = 0; i < 9; i++)
+    {
+        possibleMoves[i] = this->state[i] == '-';
+    }
+    return possibleMoves;
 }
 
 int Board::determineWinner() const
